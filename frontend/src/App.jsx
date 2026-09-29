@@ -6,6 +6,7 @@ import AppRoutes from './routes/AppRoutes';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import EnquiryMiniBanner from './components/EnquiryMiniBanner';
+import AutoEnquiryModal from './components/AutoEnquiryModal';
 
 // Main layout wrapper to conditionally render navigation bars based on current route
 const MainLayout = () => {
@@ -28,6 +29,7 @@ const MainLayout = () => {
 
       {!isStandalonePortal && <Footer />}
       {!isStandalonePortal && location.pathname !== ROUTES.ADMIN_DASHBOARD && <EnquiryMiniBanner />}
+      {!isStandalonePortal && <AutoEnquiryModal />}
     </div>
   );
 };

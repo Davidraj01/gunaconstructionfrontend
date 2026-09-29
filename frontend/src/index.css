@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
 
 :root {
   --primary-navy: #0f172a;
@@ -24,8 +24,23 @@
   --text-light: #94a3b8;
   --border-color: #e2e8f0;
   --border-radius: 12px;
-  --font-heading: 'Outfit', sans-serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
+  
+  /* Typography System */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Fluid Responsive Typography Scale (clamp-based for all screen types) */
+  --text-xs: clamp(0.72rem, 0.7rem + 0.15vw, 0.8rem);
+  --text-sm: clamp(0.82rem, 0.8rem + 0.2vw, 0.92rem);
+  --text-base: clamp(0.92rem, 0.88rem + 0.25vw, 1.05rem);
+  --text-md: clamp(1.02rem, 0.95rem + 0.35vw, 1.15rem);
+  --text-lg: clamp(1.15rem, 1.05rem + 0.5vw, 1.35rem);
+  --text-xl: clamp(1.3rem, 1.15rem + 0.8vw, 1.65rem);
+  --text-2xl: clamp(1.5rem, 1.3rem + 1.2vw, 2.05rem);
+  --text-3xl: clamp(1.8rem, 1.5rem + 1.8vw, 2.6rem);
+  --text-4xl: clamp(2.1rem, 1.75rem + 2.5vw, 3.25rem);
+  --text-5xl: clamp(2.4rem, 2rem + 3.2vw, 4rem);
+
   --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08);
   --shadow-md: 0 4px 20px -2px rgba(15, 23, 42, 0.08);
   --shadow-lg: 0 10px 30px -5px rgba(15, 23, 42, 0.12);
@@ -47,10 +62,13 @@ html, body {
   overflow-x: hidden;
   position: relative;
   font-family: var(--font-body);
+  font-size: 16px;
   background-color: var(--bg-light);
   color: var(--text-dark);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 #root {
@@ -68,36 +86,82 @@ main {
   flex-grow: 1;
 }
 
-h1 {
-  font-size: clamp(1.85rem, 4.5vw, 3.2rem);
-  word-break: break-word;
-}
-
-h2 {
-  font-size: clamp(1.35rem, 3.5vw, 2.25rem);
-  word-break: break-word;
-}
-
-h3 {
-  font-size: clamp(1.15rem, 2.8vw, 1.6rem);
-}
-
-h1, h2, h3, h4, h5, h6 {
+/* Fluid Heading Typography */
+h1, .h1 {
   font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+h2, .h2 {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
   font-weight: 700;
   line-height: 1.25;
+  letter-spacing: -0.015em;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+h3, .h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+h4, .h4 {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: 1.35;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+h5, .h5 {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+h6, .h6 {
+  font-family: var(--font-heading);
+  font-size: var(--text-md);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+button, input, select, textarea {
+  font-family: var(--font-body);
+  outline: none;
 }
 
 button {
   cursor: pointer;
   border: none;
-  font-family: var(--font-body);
-  outline: none;
 }
 
 img {
@@ -127,26 +191,19 @@ img {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: clamp(1rem, 3vw, 1.75rem);
+  padding-right: clamp(1rem, 3vw, 1.75rem);
   box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
-
-/* Utilities & Components */
+/* Utilities & Buttons */
 .btn-primary {
   background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-orange-hover) 100%);
   color: #ffffff;
-  padding: 0.8rem 1.8rem;
+  padding: clamp(0.7rem, 0.6rem + 0.4vw, 0.85rem) clamp(1.4rem, 1.1rem + 0.8vw, 1.85rem);
   border-radius: 8px;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: var(--text-sm);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -154,6 +211,7 @@ img {
   transition: var(--transition-smooth);
   box-shadow: var(--shadow-orange);
   text-align: center;
+  min-height: 44px;
 }
 
 .btn-primary:hover {
@@ -166,16 +224,17 @@ img {
   backdrop-filter: blur(8px);
   border: 1.5px solid rgba(255, 255, 255, 0.25);
   color: #ffffff;
-  padding: 0.8rem 1.8rem;
+  padding: clamp(0.7rem, 0.6rem + 0.4vw, 0.85rem) clamp(1.4rem, 1.1rem + 0.8vw, 1.85rem);
   border-radius: 8px;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: var(--text-sm);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   transition: var(--transition-smooth);
   text-align: center;
+  min-height: 44px;
 }
 
 .btn-secondary:hover {
@@ -189,15 +248,17 @@ img {
   border: 2px solid var(--accent-orange);
   color: var(--accent-orange);
   background: transparent;
-  padding: 0.75rem 1.6rem;
+  padding: clamp(0.65rem, 0.55rem + 0.4vw, 0.8rem) clamp(1.25rem, 1rem + 0.7vw, 1.65rem);
   border-radius: 8px;
   font-weight: 600;
+  font-size: var(--text-sm);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   transition: var(--transition-smooth);
   text-align: center;
+  min-height: 44px;
 }
 
 .btn-outline:hover {
@@ -209,7 +270,7 @@ img {
 .badge {
   padding: 0.35rem 0.85rem;
   border-radius: 20px;
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -234,9 +295,10 @@ img {
 /* Section Header styling */
 .section-header {
   text-align: center;
-  max-width: 700px;
-  margin: 0 auto 3.5rem auto;
+  max-width: 760px;
+  margin: 0 auto clamp(2rem, 4vw, 3.5rem) auto;
   box-sizing: border-box;
+  padding: 0 0.5rem;
 }
 
 .section-subtitle {
@@ -244,20 +306,22 @@ img {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  font-size: 0.85rem;
+  font-size: var(--text-xs);
   margin-bottom: 0.5rem;
   display: block;
 }
 
 .section-title {
-  font-size: 2.25rem;
+  font-size: var(--text-3xl);
   color: var(--primary-navy);
-  margin-bottom: 1rem;
+  margin-bottom: clamp(0.6rem, 1.2vw, 1rem);
+  line-height: 1.25;
 }
 
 .section-desc {
   color: var(--text-muted);
-  font-size: 1.05rem;
+  font-size: var(--text-base);
+  line-height: 1.65;
 }
 
 /* Hover underline animation for Navbar */
@@ -298,7 +362,7 @@ img {
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
   width: 100%;
   box-sizing: border-box;
 }
@@ -306,7 +370,7 @@ img {
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
   width: 100%;
   box-sizing: border-box;
 }
@@ -314,7 +378,7 @@ img {
 .grid-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: clamp(1rem, 2vw, 1.5rem);
   width: 100%;
   box-sizing: border-box;
 }
@@ -323,7 +387,7 @@ img {
 .hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  gap: 2.5rem;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -343,7 +407,7 @@ img {
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3.5rem;
+  gap: clamp(2rem, 4vw, 3.5rem);
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -353,7 +417,7 @@ img {
 .enquiry-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 2.5rem;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
   align-items: start;
   width: 100%;
   box-sizing: border-box;
@@ -362,30 +426,46 @@ img {
 .footer-grid {
   display: grid;
   grid-template-columns: 1.8fr 1.1fr 1.1fr 1.6fr;
-  gap: 3rem;
+  gap: clamp(1.75rem, 3vw, 3rem);
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Media Queries for Tablet and Mobile Layout */
+/* ==========================================================================
+   Comprehensive Media Queries for All Screen Sizes & Types
+   ========================================================================== */
+
+/* 1. Large Laptops & Desktops (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+    gap: 2rem;
+  }
+}
+
+/* 2. Landscape Tablets & Small Laptops (max-width: 1024px) */
 @media (max-width: 1024px) {
-  .grid-3, .grid-4 {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-4 {
     grid-template-columns: repeat(2, 1fr);
   }
   .footer-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
+    gap: 2.25rem;
   }
 }
 
+/* 3. Portrait Tablets & Mobile Devices (max-width: 960px) */
 @media (max-width: 960px) {
   .hero-grid {
     grid-template-columns: 1fr !important;
-    gap: 2.25rem !important;
+    gap: 2rem !important;
   }
   .about-grid {
     grid-template-columns: 1fr !important;
-    gap: 2.5rem !important;
+    gap: 2.25rem !important;
   }
   .enquiry-grid {
     grid-template-columns: 1fr !important;
@@ -393,26 +473,52 @@ img {
   }
 }
 
+/* 4. Small Tablets & Large Phones (max-width: 768px) */
 @media (max-width: 768px) {
   .grid-2, .grid-3, .grid-4 {
     grid-template-columns: 1fr;
   }
-  .section-title {
-    font-size: 1.75rem;
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   .section-header {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
 }
 
+/* 5. Phablets & Mobile Devices (max-width: 600px) */
 @media (max-width: 600px) {
   .hero-highlights-grid {
     grid-template-columns: 1fr !important;
-    gap: 0.75rem !important;
+    gap: 0.65rem !important;
   }
   .footer-grid {
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
+  }
+}
+
+/* 6. Standard Mobile Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+  .btn-primary, .btn-secondary, .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* 7. Extra-Small Screen Phones (max-width: 360px) */
+@media (max-width: 360px) {
+  html, body {
+    font-size: 14.5px;
+  }
+  .container {
+    padding-left: 0.65rem;
+    padding-right: 0.65rem;
   }
 }
 
@@ -434,4 +540,3 @@ img {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
