@@ -275,7 +275,7 @@ export const servicesData = [
     slug: "ug-sump-oh-tanks",
     category: "Civil & Infrastructure",
     icon_name: "Droplets",
-    image_url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+    image_url: "https://i.pinimg.com/1200x/89/43/8f/89438f1fc83fda0447e25f6d6f574132.jpg",
     short_description: "Heavy RCC underground water sumps, overhead concrete water storage tanks, waterproof plastering, and plumbing connections.",
     full_description: "Water security is paramount for every property. We construct leak-proof RCC underground water storage sumps (5,000L to 50,000L+ capacity) and overhead concrete tanks with vibration-compacted concrete, water-proofing additives, food-grade epoxy inner linings, and automated overflow float systems.",
     features: [
@@ -293,7 +293,7 @@ export const servicesData = [
     slug: "water-proofing-tanks-sunken-roofs",
     category: "Maintenance & Protection",
     icon_name: "Umbrella",
-    image_url: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80",
+    image_url: "https://i.pinimg.com/736x/a8/d8/7b/a8d87b8f07e3b377d0421d2bfe9e7fe7.jpg",
     short_description: "Specialized crystalline waterproofing, polyurethane terrace coating, bathroom sunken slab sealing, and anti-leakage guarantee.",
     full_description: "Prevent dampness, efflorescence, and costly structural damage with our advanced waterproofing treatments. We specialize in elastomeric polyurethane terrace coatings, 2K polymer modified slurry coats for bathroom sunken slabs, basement crystalline waterproofing, and expansion joint sealing.",
     features: [
@@ -365,7 +365,7 @@ export const servicesData = [
     slug: "licensed-surveyor",
     category: "Engineering & Approvals",
     icon_name: "Compass",
-    image_url: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80",
+    image_url: "https://i.pinimg.com/1200x/43/3b/59/433b59c309e8251a2d8c01998a7d5cc6.jpg",
     short_description: "Digital Total Station surveying, GPS boundary demarcation, contour topography maps, and layout demarcation.",
     full_description: "Precise land boundary measurements conducted by government licensed surveyors. Using state-of-the-art DGPS (Differential Global Positioning System) and Digital Total Station instruments, we provide boundary pegging, topographic contours, area reconciliation, and subdivision layout drawings.",
     features: [
@@ -437,7 +437,7 @@ export const servicesData = [
     slug: "building-materials",
     category: "Realty & Development",
     icon_name: "Package",
-    image_url: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+    image_url: "https://i.pinimg.com/736x/5f/18/ed/5f18eda0b4e2d081de363afbd4d2b4d0.jpg",
     short_description: "Direct supply of 53-grade cement, Fe-550D TMT steel bars, M-sand, P-sand, river aggregates, and red clay bricks.",
     full_description: "Source verified, lab-tested building materials at competitive wholesale rates directly through GUNA CONSTRUCTION supply networks. We supply branded 53 Grade OPC/PPC cement, ISI certified Fe 550D TMT rebar, washed M-Sand, Plastering Sand, 20mm/40mm blue metal aggregates, and wire-cut red bricks.",
     features: [

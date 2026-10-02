@@ -6,7 +6,7 @@ tags:
 - git
 - hotspot
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-09-29
 filenames:
 - frontend/package-lock.json
 links: []
@@ -14,7 +14,7 @@ kind: code
 status: proposed
 superseded_by: null
 deprecated_at: null
-review_after: 2026-09-28
+review_after: 2026-09-29
 source_chat_id: null
 created_at: 2026-09-28T06:50:34.410696800+00:00
 summary: null
